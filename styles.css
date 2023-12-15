@@ -1,0 +1,22 @@
+/* color-1: #67729d;
+color-2: #bb9cc0;
+color-3: #e7bcde;
+color-4: #fed9ed; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  background-color: #fed9ed;
+}
