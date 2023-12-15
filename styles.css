@@ -3,9 +3,9 @@ color-2: #bb9cc0;
 color-3: #e7bcde;
 color-4: #fed9ed; */
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -14,9 +14,126 @@ html {
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+  height: 100%;
+  font-family: "Source Sans Pro", monospace, sans-serif;
+  display: flex;
+  line-height: 3rem;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1em;
+  margin: 3rem;
   background-color: #fed9ed;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0.5rem 0.5rem 1rem #bb9cc0;
+}
+
+.main {
+  margin: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  height: 10%;
+  font-size: 3rem;
+  background-color: #bb9cc0;
+  color: #fed9ed;
+  box-shadow: 0.5rem 0.5rem 1rem #bb9cc0;
+}
+
+h3 {
+  text-align: center;
+  margin: 1rem;
+}
+
+#items {
+  margin: 1rem;
+  width: 20rem;
+  height: 4rem;
+  font-size: 2rem;
+  color: #67729d;
+  border-radius: 3rem;
+  border: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  width: 11rem;
+  height: 4rem;
+  color: #67729d;
+  font-family: inherit;
+  font-size: 14px;
+  margin: 0 0.5em;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  background: none;
+  letter-spacing: 1px;
+  transition: 250ms ease-out;
+  background: #fed9ed;
+  border: 1px solid;
+  letter-spacing: 1px;
+  font-family: "Source Sans Pro", sans-serif;
+  border: #fed9ed 1px solid;
+  transition: 250ms ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  background: #67729d;
+}
+
+.form {
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: space-between; */
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 1.5rem 1rem 0 1rem;
+  background-color: #bb9cc0;
+}
+
+.form-detail {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #67729d;
+  /* background-color: #67729d; */
+}
+
+.todo-list-remove {
+  margin-left: 0.5em;
+  background: none;
+  border: 1px solid;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 80%;
 }
