@@ -32,9 +32,10 @@ body {
   justify-content: space-between;
   border-radius: 1em;
   margin: 3rem;
-  background-color: #fed9ed;
   border-radius: 10px;
+  border: 1px solid #67729d;
   overflow: hidden;
+
   box-shadow: 0.5rem 0.5rem 1rem #bb9cc0;
 }
 
@@ -108,9 +109,6 @@ button:hover {
 }
 
 .form {
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: space-between; */
   margin: 1rem;
   border-radius: 10px;
   padding: 1.5rem 1rem 0 1rem;
