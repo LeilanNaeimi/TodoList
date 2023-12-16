@@ -35,7 +35,6 @@ body {
   border-radius: 10px;
   border: 1px solid #67729d;
   overflow: hidden;
-
   box-shadow: 0.5rem 0.5rem 1rem #bb9cc0;
 }
 
@@ -46,8 +45,9 @@ body {
   height: 10%;
   font-size: 3rem;
   background-color: #bb9cc0;
+  /* border: 1px solid #67729d; */
   color: #fed9ed;
-  box-shadow: 0.5rem 0.5rem 1rem #bb9cc0;
+  /* box-shadow: 0.5rem 0.5rem 1rem #bb9cc0; */
 }
 
 h3 {
@@ -55,7 +55,7 @@ h3 {
   margin: 1rem;
 }
 
-#items {
+#listItem {
   margin: 1rem;
   width: 20rem;
   height: 4rem;
@@ -112,6 +112,7 @@ button:hover {
   margin: 1rem;
   border-radius: 10px;
   padding: 1.5rem 1rem 0 1rem;
+  border: 1px solid #67729d;
   background-color: #bb9cc0;
 }
 
@@ -134,4 +135,13 @@ button:hover {
   height: 2rem;
   border-radius: 50%;
   font-size: 80%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
 }

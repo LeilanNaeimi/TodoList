@@ -12,16 +12,16 @@
       <div class="main">
         <h3>ToDo List</h3>
       </div>
-      <form class="form">
+      <div class="form">
         <div class="form-head">
-          <input type="text" name="items" id="items" />
-          <button class="btn">Add</button>
+          <input type="text" name="items" id="listItem" />
+          <button class="btn btnAdd" onclick="addToList()">Add</button>
         </div>
         <div class="form-detail">
-          <p>.</p>
+          <ul class="list"></ul>
           <button class="btn todo-list-remove"></button>
         </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>
