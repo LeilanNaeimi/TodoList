@@ -1,18 +1,41 @@
-function addToList() {
-  let listItem = document.querySelector(".listItem");
-  console.log(listItem);
+const btnAdd = document.querySelector(".btnAdd");
 
-  let listVal = listItem.value;
+btnAdd.onclick = function () {
+  // if (document.querySelector("form input").value.length == 0) {
+  //   alert("Please Enter a Task");
+  // } else {
+  document.querySelector("#tasks").innerHTML += `
+          <div class="task">
+              <span id="taskname">
+                  ${document.querySelector("#form input").value}
+              </span>
+              <button class="delete">
+                  <i class="far fa-trash-alt"></i>
+              </button>
+          </div>
+      `;
 
-  console.log(listItem, listVal);
-
-  if (listVal.trim() !== "") {
-    let li = document.createElement("li");
-    console.log(li);
-    li.appendChild(document.createTextNode(listVal));
-    document.getElementById("list").appendChild(li);
-    listItem.value = "";
-  } else {
-    alert("Please enter a task!");
+  var current_tasks = document.querySelectorAll(".delete");
+  for (var i = 0; i < current_tasks.length; i++) {
+    current_tasks[i].onclick = function () {
+      this.parentNode.remove();
+    };
   }
-}
+};
+
+/*************** */
+// btnAdd.onclick = function () {
+//   let listItem = document.getElementById("listItem");
+//   let ulList = document.getElementById("list");
+
+//   let listVal = listItem.value;
+//   if (listVal.trim() !== "") {
+//     let liList = document.createElement("li");
+//     let addItems = document.createTextNode(listVal);
+//     liList.appendChild(addItems);
+//     ulList.appendChild(liList);
+//     listItem.value = "";
+//   } else {
+//     alert("Please enter a task!");
+//   }
+// };
