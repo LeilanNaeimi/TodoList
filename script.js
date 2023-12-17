@@ -1,27 +1,40 @@
-const btnAdd = document.querySelector(".btnAdd");
+function addList() {
+  let input = document.getElementById("input").value;
 
-btnAdd.onclick = function () {
-  // if (document.querySelector("form input").value.length == 0) {
-  //   alert("Please Enter a Task");
-  // } else {
-  document.querySelector("#tasks").innerHTML += `
-          <div class="task">
-              <span id="taskname">
-                  ${document.querySelector("#form input").value}
-              </span>
-              <button class="delete">
-                  <i class="far fa-trash-alt"></i>
-              </button>
-          </div>
-      `;
+  if (input == "") {
+    alert("Add an item");
+  } else {
+    document.getElementById("input").value = "";
 
-  var current_tasks = document.querySelectorAll(".delete");
-  for (var i = 0; i < current_tasks.length; i++) {
-    current_tasks[i].onclick = function () {
-      this.parentNode.remove();
-    };
+    let pTag = document.createElement("p");
+    let task = document.createTextNode(input);
+    let result = document.getElementById("result");
+
+    pTag.appendChild(task);
+    result.appendChild(pTag);
+
+    console.log(pTag);
+    console.log(task);
+    console.log(result);
+
+    /**** add delete button */
+    let removeTag = document.createElement("span");
+    let removeText = document.createTextNode("X");
+
+    removeTag.appendChild(removeText);
+    pTag.appendChild(removeTag);
+
+    pTag.addEventListener("click", taskDone);
+
+    function taskDone() {
+      pTag.style.textDecoration = "line-through";
+    }
+
+    let remove = document.createAttribute("onclick");
+    remove.value = "this.parentNode.remove();";
+    removeTag.setAttribute("remove", remove);
   }
-};
+}
 
 /*************** */
 // btnAdd.onclick = function () {
