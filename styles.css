@@ -55,7 +55,7 @@ h3 {
   margin: 1rem;
 }
 
-#listItem {
+#input {
   margin: 1rem;
   width: 20rem;
   height: 4rem;
@@ -137,15 +137,11 @@ button:hover {
   font-size: 80%;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.result {
+  margin: 1rem;
 }
 
-li {
-  margin: 5px 0;
-}
-
+/* 
 .task {
   border-radius: 5px;
   align-items: center;
@@ -172,4 +168,4 @@ li {
   height: 100%;
   width: 40px;
   border-radius: 5px;
-}
+} */
