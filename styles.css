@@ -124,23 +124,23 @@ button:hover {
   /* background-color: #67729d; */
 }
 
-.todo-list-remove {
-  margin-left: 0.5em;
-  background: none;
-  border: 1px solid;
-  color: inherit;
-  padding: 0;
-  line-height: 1;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  font-size: 80%;
-}
-
 .result {
   margin: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
+p {
+  display: flex;
+  font-size: 14px;
+  color: #363946;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+span {
+  background: none;
+}
 /* 
 .task {
   border-radius: 5px;
