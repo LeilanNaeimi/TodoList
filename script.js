@@ -1,4 +1,5 @@
 function addList() {
+  // let task = { list: "list1" };
   let input = document.getElementById("input").value;
 
   if (input == "") {
@@ -13,9 +14,14 @@ function addList() {
     pTag.appendChild(task);
     result.appendChild(pTag);
 
-    console.log(pTag);
-    console.log(task);
-    console.log(result);
+    // console.log(pTag);
+
+    /// localstorage
+    // const listJson = JSON.stringify(task);
+    // localStorage.setItem("myList", listJson);
+    // const items = localStorage.getItem("myList");
+    // const final = JSON.parse(items);
+    // console.log(`my items:${final} ,task is: ${task}`);
 
     /**** add delete button */
     let removeTag = document.createElement("span");
@@ -27,28 +33,7 @@ function addList() {
     pTag.addEventListener("click", taskDone);
 
     function taskDone() {
-      pTag.style.textDecoration = "line-through";
+      pTag.remove();
     }
-
-    let remove = document.createAttribute("onclick");
-    remove.value = "this.parentNode.remove();";
-    removeTag.setAttribute("remove", remove);
   }
 }
-
-/*************** */
-// btnAdd.onclick = function () {
-//   let listItem = document.getElementById("listItem");
-//   let ulList = document.getElementById("list");
-
-//   let listVal = listItem.value;
-//   if (listVal.trim() !== "") {
-//     let liList = document.createElement("li");
-//     let addItems = document.createTextNode(listVal);
-//     liList.appendChild(addItems);
-//     ulList.appendChild(liList);
-//     listItem.value = "";
-//   } else {
-//     alert("Please enter a task!");
-//   }
-// };
