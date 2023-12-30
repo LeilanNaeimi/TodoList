@@ -1,39 +1,72 @@
-function addList() {
-  // let task = { list: "list1" };
-  let input = document.getElementById("input").value;
+let addBtn = document.getElementById("submit");
 
+addBtn.addEventListener("click", addList);
+
+function addList() {
+  let input = document.getElementById("input").value;
+  console.log(input);
   if (input == "") {
     alert("Add an item");
   } else {
     document.getElementById("input").value = "";
 
-    let pTag = document.createElement("p");
+    let li = document.createElement("li");
     let task = document.createTextNode(input);
     let result = document.getElementById("result");
 
-    pTag.appendChild(task);
-    result.appendChild(pTag);
+    li.appendChild(task);
+    result.appendChild(li);
 
-    // console.log(pTag);
+    // Save to-do list item to local storage
+    saveToLocalStorage(input);
 
-    /// localstorage
-    // const listJson = JSON.stringify(task);
-    // localStorage.setItem("myList", listJson);
-    // const items = localStorage.getItem("myList");
-    // const final = JSON.parse(items);
-    // console.log(`my items:${final} ,task is: ${task}`);
-
-    /**** add delete button */
+    // add delete button
     let removeTag = document.createElement("span");
     let removeText = document.createTextNode("X");
 
     removeTag.appendChild(removeText);
-    pTag.appendChild(removeTag);
+    li.appendChild(removeTag);
 
-    pTag.addEventListener("click", taskDone);
+    li.addEventListener("click", taskDone);
 
     function taskDone() {
-      pTag.remove();
+      li.remove();
+      // Remove the task from local storage when deleted
+      removeFromLocalStorage(input);
     }
   }
+}
+
+// Function to save a task to local storage
+function saveToLocalStorage(task) {
+  let items = localStorage.getItem("myList");
+  console.log(items);
+  if (items === null) {
+    items = [];
+  } else {
+    items = JSON.parse(items);
+  }
+
+  items.push(task);
+  localStorage.setItem("myList", JSON.stringify(items));
+}
+
+// Function to save a task to local storage
+function removeFromLocalStorage(task) {
+  items = JSON.parse(items);
+  console.log(`remove: ${items}`);
+}
+
+//// init
+let items = localStorage.getItem("myList");
+let result = document.getElementById("result");
+
+console.log(items);
+
+items = JSON.parse(items);
+for (let i = 0; i < items.length; i++) {
+  let li = document.createElement("li");
+  let task = document.createTextNode(items[i]);
+  li.appendChild(task);
+  result.appendChild(li);
 }
